@@ -76,33 +76,36 @@ def test_get_largest_prime_below(n):
     assert(get_largest_prime_below(4))==3
 
 
+def main():
+    shouldRun=True
+    while shouldRun:
+        print("1.un numar este palindrom sau nu")
+        print("2.un numar este superprim sau nu")
+        print("3.ultimul numar prim mai mic decat un numar dat")
+        print("x.Iesire")
 
-shouldRun=True
-while shouldRun:
-    print("1.un numar este palindrom sau nu")
-    print("2.un numar este superprim sau nu")
-    print("3.ultimul numar prim mai mic decat un numar dat")
-    print("x.Iesire")
+        optiune=input("dati optiune:")
+        if(optiune=="1"):
+            n=int(input("dati nr:"))
+            if is_palindrom(n)==True:
+                print("numarul n este palindrom")
+            else:
+                print("numarul n nu este palindrom")
+        elif(optiune=="2"):
+            n=int(input("dati numarul:"))
+            if(is_superprime(n)==True):
+                print("numarul n este superprim")
+            else:
+                print("numarul nu este superprim")
+        elif (optiune == "3"):
+            n = int(input("dati numarul:"))
+            print(get_largest_prime_below(n))
 
-    optiune=input("dati optiune:")
-    if(optiune=="1"):
-        n=int(input("dati nr:"))
-        if is_palindrom(n)==True:
-            print("numarul n este palindrom")
-        else:
-            print("numarul n nu este palindrom")
-    elif(optiune=="2"):
-        n=int(input("dati numarul:"))
-        if(is_superprime(n)==True):
-            print("numarul n este superprim")
-        else:
-            print("numarul nu este superprim")
-    elif (optiune == "3"):
-        n = int(input("dati numarul:"))
-        print(get_largest_prime_below(n))
+        elif optiune=="x":
+            shouldRun=False
 
-    elif optiune=="x":
-        shouldRun=False
+if __name__=='__main__':
+    main()
 
 
 

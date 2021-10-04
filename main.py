@@ -71,7 +71,9 @@ def get_largest_prime_below(n):
             if (is_prim(i) == True):
                 run = True
                 return i
-
+def test_get_largest_prime_below(n):
+    assert(get_largest_prime_below(14))== 13
+    assert(get_largest_prime_below(4))==3
 
 
 
@@ -98,7 +100,6 @@ while shouldRun:
     elif (optiune == "3"):
         n = int(input("dati numarul:"))
         print(get_largest_prime_below(n))
-
 
     elif optiune=="x":
         shouldRun=False

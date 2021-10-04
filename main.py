@@ -1,6 +1,7 @@
 
 def is_palindrom(x):
     '''
+    problema 5
     verifica daca un numar este palindrom
     :param numarul pe care il verificam daca este plaindrom
     :return bool: true daca e palindrom sau false daca numarul nu este palindrom
@@ -24,6 +25,7 @@ def test_is_palindrom():
 
 def is_prim(n):
     '''
+    problema 6
     verifica daca un numar este prim sau nu
     :param n: numarul pe care il verificam daca este prim
     :return: bool: True daca este prim sau False daca nu este prim
@@ -56,11 +58,29 @@ def test_is_superprime():
     assert(is_superprimee(233))== True
     assert(is_superprime(237))== False
 
+
+def get_largest_prime_below(n):
+    run=False
+    '''
+    gasim ultimul numaru prim mai mic decat numarul n dat
+    :param n: n este numarul de la care pornim sa cautam numarul prim mai mic 
+    :return: ultimul numar prim mai mic decat n
+    '''
+    while run == False :
+        for i in range(n-1,1,-1):
+            if (is_prim(i) == True):
+                run = True
+                return i
+
+
+
+
 shouldRun=True
 while shouldRun:
     print("1.un numar este palindrom sau nu")
     print("2.un numar este superprim sau nu")
-    print("3.Iesire")
+    print("3.ultimul numar prim mai mic decat un numar dat")
+    print("x.Iesire")
 
     optiune=input("dati optiune:")
     if(optiune=="1"):
@@ -75,6 +95,11 @@ while shouldRun:
             print("numarul n este superprim")
         else:
             print("numarul nu este superprim")
+    elif (optiune == "3"):
+        n = int(input("dati numarul:"))
+        print(get_largest_prime_below(n))
+
+
     elif optiune=="x":
         shouldRun=False
 
